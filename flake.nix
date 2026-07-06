@@ -22,12 +22,12 @@
         momw-tools-pack = pkgs.callPackage ./momw-tools-pack {};
         openmw = pkgs.callPackage ./openmw {};
         osu = pkgs.callPackage ./osu {};
-      };
+      };}) // {
 
       overlays = {
-        momw-tools-pack = [(final: prev: {momw-tools-pack = self.packages.${system}.momw-tools-pack;})];
-        openmw = [(final: prev: {openmw = self.packages.${system}.openmw;})];
-        osu = [(final: prev: {osu = self.packages.${system}.osu;})];
+        momw-tools-pack = (final: prev: {momw-tools-pack = self.packages.${final.stdenv.hostPlatform.system}.momw-tools-pack;});
+        openmw = (final: prev: {openmw = self.packages.${final.stdenv.hostPlatform.system}.openmw;});
+        osu = (final: prev: {osu = self.packages.${final.stdenv.hostPlatform.system}.osu;});
       };
-    });
+    };
 }
