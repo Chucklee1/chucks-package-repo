@@ -24,10 +24,10 @@
         osu = pkgs.callPackage ./osu {};
       };
 
-      overlays = [
-        (final: prev: {momw-tools-pack = self.packages.${system}.momw-tools-pack;})
-        (final: prev: {openmw = self.packages.${system}.openmw;})
-        (final: prev: {osu = self.packages.${system}.osu;})
-      ];
+      overlays = {
+        momw-tools-pack = [(final: prev: {momw-tools-pack = self.packages.${system}.momw-tools-pack;})];
+        openmw = [(final: prev: {openmw = self.packages.${system}.openmw;})];
+        osu = [(final: prev: {osu = self.packages.${system}.osu;})];
+      };
     });
 }
