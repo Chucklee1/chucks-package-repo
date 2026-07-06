@@ -104,12 +104,4 @@ in
         _7zip-zstd-rar
       ]}
     '';
-
-    meta = {
-      description = "All the tools you need to automatically install and configure Modding-OpenMW.com mod lists in one package";
-      homepage = "https://modding-openmw.gitlab.io/momw-tools-pack";
-      changelog = "https://gitlab.com/modding-openmw/momw-tools-pack/activity";
-      license = lib.licenses.gpl3;
-      platforms = [lib.platforms.linux lib.platforms.darwin];
-    };
   }
