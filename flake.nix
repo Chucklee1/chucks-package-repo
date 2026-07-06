@@ -7,6 +7,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     flake-utils,
     ...
@@ -22,5 +23,11 @@
         openmw = pkgs.callPackage ./openmw {};
         osu = pkgs.callPackage ./osu {};
       };
+
+      overlays = [
+        (final: prev: {momw-tools-pack = self.packages.${system}.momw-tools-pack;})
+        (final: prev: {openmw = self.packages.${system}.openmw;})
+        (final: prev: {osu = self.packages.${system}.osu;})
+      ];
     });
 }
