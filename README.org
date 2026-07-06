@@ -1,0 +1,20 @@
+#+title: chucks-package-repo
+
+- I decided to move these pkgs to their own repo as they were clogging up my dotfiles
+- Once I add proper metadata I may upstream to the NUR but for now, these are just here
+  for my own convenience
+
+*** Current Packages
+|-----------------+---------+------------------------------------------|
+| pname           | version | desc.                                    |
+|-----------------+---------+------------------------------------------|
+| momw-tools-pack |    1.48 | All the tools you need to automatically. |
+|                 |         | install and configure Modding-OpenMW.com |
+|                 |         | mod lists in one package.                |
+|-----------------+---------+------------------------------------------|
+| openmw          |  0.52.0 | open-world RPG game engine that supports |
+|                 |         | playing Morrowind by Bethesda Softworks. |
+|-----------------+---------+------------------------------------------|
+| osu             |     git | Binary Release of Osu Lazer.             |
+|-----------------+---------+------------------------------------------|
+more to come, maybe...
