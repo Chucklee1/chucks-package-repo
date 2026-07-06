@@ -14,6 +14,7 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {
         inherit system;
+        config.allowUnfree = true; # osu lazer
       };
     in {
       packages = {
