@@ -4,7 +4,7 @@
   stdenvNoCC,
   ...
 }: let
-  pname = "modorganizer2-linux-installer";
+  pname = "mo2-lint";
   version = "7.0.0-rc6";
 
   mo2-lint = stdenvNoCC.mkDerivation {
