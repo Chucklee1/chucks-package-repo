@@ -11,20 +11,25 @@
     flake-parts,
     ...
   } @ inputs: let
+    # it's just cleaner to put all list up here
+    # at least to me it is...
+    systems = [
+      "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
+
     pkgList = [
+      "mo2-lint"
       "momw-tools-pack"
       "openmw"
       "osu"
     ];
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
+      inherit systems;
       imports = [flake-parts.flakeModules.easyOverlay];
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
 
       perSystem = {
         lib,

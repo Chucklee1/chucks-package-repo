@@ -5,13 +5,21 @@
   for my own convenience
 
 *** Current Packages
-|-----------------+---------+-----------------------------------------------------------------------------------------------------------|
-| pname           | version | desc.                                                                                                     |
-|-----------------+---------+-----------------------------------------------------------------------------------------------------------|
-| momw-tools-pack |    1.48 | All the tools you need to automatically.install and configure Modding-OpenMW.com mod list in one package. |
-|-----------------+---------+-----------------------------------------------------------------------------------------------------------|
-| openmw          |  0.52.0 | open-world RPG game engine that supports playing Morrowind by Bethesda Softworks.                         |
-|-----------------+---------+-----------------------------------------------------------------------------------------------------------|
-| osu             |     git | Binary Release of Osu Lazer.                                                                              |
-|-----------------+---------+-----------------------------------------------------------------------------------------------------------|
+|-----------------+-----------+-----------------------------------------------------------------------------------------------------------|
+| pname           | version   | desc.                                                                                                     |
+|-----------------+-----------+-----------------------------------------------------------------------------------------------------------|
+| mo2-lint        | 7.0.0-rc6 | An easy-to-use Mod Organizer 2 installer for Linux.                                                       |
+|-----------------+-----------+-----------------------------------------------------------------------------------------------------------|
+| momw-tools-pack | 1.48      | All the tools you need to automatically.install and configure Modding-OpenMW.com mod list in one package. |
+|-----------------+-----------+-----------------------------------------------------------------------------------------------------------|
+| openmw          | 0.52.0    | open-world RPG game engine that supports playing Morrowind by Bethesda Softworks.                         |
+|-----------------+-----------+-----------------------------------------------------------------------------------------------------------|
+| osu             | git       | Binary Release of Osu Lazer.                                                                              |
+|-----------------+-----------+-----------------------------------------------------------------------------------------------------------|
 more to come, maybe...
+
+*** Some Notes:
+- Currently, mo2-lint is only a binary. If anyone wants to figure out either building with uv+nix or refactoring to not use uv, feel free.
+- momw-tools-pack is also just a binaries packages in a, hence the name, tool pack. I also don't see a point in compiling each of the tools. Maybe I will later.
+
+ =¯\_(ツ)_/¯=
