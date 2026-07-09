@@ -3,31 +3,46 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs = {
-    self,
     nixpkgs,
-    flake-utils,
+    flake-parts,
     ...
-  }:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true; # osu lazer
-      };
-    in {
-      packages = {
-        momw-tools-pack = pkgs.callPackage ./momw-tools-pack {};
-        openmw = pkgs.callPackage ./openmw {};
-        osu = pkgs.callPackage ./osu {};
-      };}) // {
+  } @ inputs: let
+    pkgList = [
+      "momw-tools-pack"
+      "openmw"
+      "osu"
+    ];
+  in
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [flake-parts.flakeModules.easyOverlay];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
 
-      overlays = {
-        momw-tools-pack = (final: prev: {momw-tools-pack = self.packages.${final.stdenv.hostPlatform.system}.momw-tools-pack;});
-        openmw = (final: prev: {openmw = self.packages.${final.stdenv.hostPlatform.system}.openmw;});
-        osu = (final: prev: {osu = self.packages.${final.stdenv.hostPlatform.system}.osu;});
+      perSystem = {
+        lib,
+        config,
+        pkgs,
+        system,
+        ...
+      }: {
+        # import all pkgs as easy, overlays...
+        # woohoo for flake parts!
+        overlayAttrs = config.packages;
+        _module.args.pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        packages = lib.genAttrs pkgList (
+          pname: pkgs.callPackage ./${pname} {}
+        );
       };
     };
 }
