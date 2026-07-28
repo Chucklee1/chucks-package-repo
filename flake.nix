@@ -46,7 +46,7 @@
           config.allowUnfree = true;
         };
         packages = lib.genAttrs pkgList (
-          pname: pkgs.callPackage ./${pname} {}
+          pname: pkgs.callPackage ./pkgs/${pname} {}
         );
       };
     };
