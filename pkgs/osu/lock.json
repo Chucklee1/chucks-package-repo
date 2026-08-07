@@ -1,6 +1,6 @@
 {
-  "version": "2026.726.0",
-  "aarch64-darwin": "sha256-0nH61Otfv1X5nfsN5tQlw38fn2s2D+6ZybK0EweA7/8=",
-  "x86_64-darwin": "sha256-2A09nxfr+SGALuhvGf96KUaUEdwOzrv3jao+QcPwfag=",
-  "x86_64-linux": "sha256-PTAoYJVD3/0DewBlJgP3WShRUQC2JFvJKancRv07KaA="
+  "version": "2026.804.2",
+  "aarch64-darwin": "sha256-J2kZ7CTMdeCrQRzbJkNuaDzlHQe4mRb64dNQec5pmmM=",
+  "x86_64-darwin": "sha256-vR9kEa1nprZEnuR0VY3zmBX4hJu55FdFFIGKI3YlV+Y=",
+  "x86_64-linux": "sha256-0K/dyvIwrlBzcexYDCCilNknJdEZja1OTfAotP6MvjY="
 }
