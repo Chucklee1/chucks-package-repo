@@ -106,4 +106,16 @@ in
         _7zip-zstd-rar
       ]}
     '';
-  }
+
+  meta = {
+    description = "All the tools you need to automatically install and configure Modding-OpenMW.com mod lists in one package.";
+    homepage = "https://modding-openmw.gitlab.io/momw-tools-pack/";
+    license = lib.licenses.mit;
+    platforms = [
+      "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
+  };
+}
