@@ -5,13 +5,13 @@
   ...
 }: let
   pname = "mo2-lint";
-  version = "7.0.0-rc6";
+  version = "7.0.0";
 
   mo2-lint = stdenvNoCC.mkDerivation {
     inherit pname version;
     src = fetchurl {
       url = "https://github.com/Furglitch/modorganizer2-linux-installer/releases/download/${version}/mo2-lint";
-      sha256 = "sha256-+F2M02+tJeAaUONJNUIOuKeVCnDsheFOBmWOy+M0Lq4=";
+      hash = "sha256-bNc1VKVSe9u7zwLlcm0LTaDl/hJXVImd+rWuMp66NBc=";
     };
 
     dontUnpack = true;
