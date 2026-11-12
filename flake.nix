@@ -24,7 +24,6 @@
       "mo2-lint"
       "momw-tools-pack"
       "openmw"
-      "osu"
     ];
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
